@@ -5,6 +5,7 @@ import 'package:weather_app/additional_info.dart';
 import 'package:weather_app/hourly_forecast.dart';
 import 'dart:ui';
 import 'dart:convert';
+import 'package:intl/intl.dart';
 import 'package:http/http.dart' as http;
 
 class WeatherScreen extends StatefulWidget {
@@ -45,7 +46,6 @@ class _WeatherScreenState extends State<WeatherScreen> {
         backgroundColor: const Color.fromARGB(255, 0, 140, 255),
         elevation: 0,
         leading: PopupMenuButton<String>(
-          
           elevation: 1,
           icon: const Icon(Icons.menu, color: Colors.white),
           color: const Color.fromARGB(199, 10, 153, 255),
@@ -123,7 +123,7 @@ class _WeatherScreenState extends State<WeatherScreen> {
         ),
 
         title: const Text(
-          'Weather App',
+          'SkyCast',
           style: TextStyle(fontWeight: FontWeight.bold),
         ),
         centerTitle: true,
@@ -133,16 +133,14 @@ class _WeatherScreenState extends State<WeatherScreen> {
             icon: const Icon(Icons.refresh),
             onPressed: () {
               setState(() {});
-              //  print('Refresh button pressed');
-              // Handle settings action
             },
           ),
         ],
       ),
       body: FutureBuilder(
         future: getCurrentWeather(),
-        // ignore: non_constant_identifier_names
-        builder: (Context, snapshot) {
+
+        builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
             return const Center(
               child: CircularProgressIndicator(color: Colors.white),
@@ -267,7 +265,7 @@ class _WeatherScreenState extends State<WeatherScreen> {
                           DateTime now = DateTime.now();
                           List<dynamic> forecastList = data?['list'] ?? [];
 
-                          // Filter out only future forecasts
+                          //
                           List<dynamic> futureForecasts =
                               forecastList.where((entry) {
                                 DateTime forecastTime = DateTime.parse(
@@ -276,12 +274,12 @@ class _WeatherScreenState extends State<WeatherScreen> {
                                 return forecastTime.isAfter(now);
                               }).toList();
 
-                          // this showhow 5 future 3-hourly forecasts
+                          //future forecasts
                           return List.generate(5, (index) {
                             final entry = futureForecasts[index];
 
                             return HourlyForecastCard(
-                              time: entry['dt_txt']?.substring(11, 16) ?? 'N/A',
+                              time: DateFormat.j().format(DateTime.parse(entry['dt_txt'])),
                               icon:
                                   (entry['weather'][0]['main'] == 'Clouds' ||
                                           entry['weather'][0]['main'] == 'Rain')
