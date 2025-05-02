@@ -31,6 +31,6 @@ Made with 💙 in Flutter by Raj.
 1. **Clone the repository**:
   ```bash
 git clone https://github.com/Rxjpawar/SkyCast.git
-cd ShopApp
+cd SKyCast
 flutter pub get
 flutter run
