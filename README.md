@@ -1,20 +1,36 @@
-<<<<<<< HEAD
-# weather_app
+# 🌤️ SkyCast - Flutter Weather App
 
-A new Flutter project.
+SkyCast is a beautifully designed Flutter app that provides accurate and real-time weather updates. It fetches weather forecasts using the OpenWeatherMap API and presents them in a clean, minimalistic UI with support for multiple cities, detailed information, and dynamic icons.
 
-## Getting Started
+---
 
-This project is a starting point for a Flutter application.
+## 🚀 Features
 
-A few resources to get you started if this is your first Flutter project:
+- 🌍 **City Selector** – Quickly switch between major Indian cities like Mumbai, Delhi, Bangalore, Chennai, and Kolkata.
+- ⛅ **Current Weather** – Displays current temperature, weather condition, and icons (sunny/cloudy).
+- 🕒 **Hourly Forecast** – Shows upcoming hourly temperatures with intuitive cards.
+- ℹ️ **Additional Info** – Includes humidity, wind speed, and pressure data.
+- ✨ **Glassmorphism UI** – Modern, stylish, and responsive design.
+- 🔄 **Manual Refresh** – Refresh data instantly using the refresh button.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+---
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-=======
-# weather_app
->>>>>>> 549ff75c27624c69ba7845da9421464a0006eb9c
+## 📸 Screenshots
+
+### 🏠 Home Screen
+![Home Screen](assets/screenshots/ss1.jpg)
+
+---
+## ✨ Credits
+
+Made with 💙 in Flutter by Raj.
+
+
+## 🔧 Installation
+
+1. **Clone the repository**:
+  ```bash
+git clone https://github.com/Rxjpawar/SkyCast.git
+cd ShopApp
+flutter pub get
+flutter run
